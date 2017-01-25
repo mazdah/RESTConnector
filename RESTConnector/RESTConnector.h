@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AuthInfo.h"
 
-@interface RESTConnector : NSObject
+@interface RESTConnector : NSObject <NSURLSessionDataDelegate>
 
+@property (nonatomic, strong)   NSMutableData  *receivedData;
+
+- (id) init;
+- (void) callApiWithURLStrResultData:(NSString *)URLString;
 @end

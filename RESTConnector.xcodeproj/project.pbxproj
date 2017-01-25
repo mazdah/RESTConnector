@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E7E764401E370F5A0082D156 /* RESTConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E7643F1E370F5A0082D156 /* RESTConnector.m */; };
-		E7E764411E370F5A0082D156 /* RESTConnector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E7643E1E370F5A0082D156 /* RESTConnector.h */; };
+		E7E764411E370F5A0082D156 /* RESTConnector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E7643E1E370F5A0082D156 /* RESTConnector.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E7E7648E1E3755370082D156 /* AuthInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E764471E3719AD0082D156 /* AuthInfo.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,6 +19,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				E7E7648E1E3755370082D156 /* AuthInfo.h in CopyFiles */,
 				E7E764411E370F5A0082D156 /* RESTConnector.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +30,7 @@
 		E7E7643B1E370F5A0082D156 /* libRESTConnector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESTConnector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E7643E1E370F5A0082D156 /* RESTConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESTConnector.h; sourceTree = "<group>"; };
 		E7E7643F1E370F5A0082D156 /* RESTConnector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTConnector.m; sourceTree = "<group>"; };
+		E7E764471E3719AD0082D156 /* AuthInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			children = (
 				E7E7643E1E370F5A0082D156 /* RESTConnector.h */,
 				E7E7643F1E370F5A0082D156 /* RESTConnector.m */,
+				E7E764471E3719AD0082D156 /* AuthInfo.h */,
 			);
 			path = RESTConnector;
 			sourceTree = "<group>";
@@ -171,7 +175,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -212,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -223,6 +227,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = J87PFM5WEF;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

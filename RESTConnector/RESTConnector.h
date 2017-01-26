@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthInfo.h"
+#import "JSONUtil.h"
 
 @protocol  RESTConnectorDelegate;
 
@@ -24,6 +25,6 @@
 
 @required
 
-- (void) receiveResponseData: (NSData *) data;
+- (void) receiveResponseDataToDictionary: (NSDictionary *) jsonDic;
 
 @end

@@ -23,7 +23,7 @@
     self.baseUrl = baseUrlParam;
 }
 
-- (void) callApiWithURLStr:(NSString *)URLString method:(NSString *)method param:(NSString *)param {
+- (void) callApiWithURLStr:(NSString *)URLString method:(NSString *)method param:(id)param {
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     NSString *fullURLStr = [NSString stringWithFormat:@"%@%@", TILL60_BASE_URL, URLString];
@@ -33,14 +33,14 @@
     [urlRequest setHTTPMethod:method];
     
     if ([@"POST" isEqualToString:method] || [@"PUT" isEqualToString:method] || [@"PATCH" isEqualToString:method]) {
-        [urlRequest setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding]];
+        [urlRequest setHTTPBody:[[JSONUtil DictionaryToJSONString:param] dataUsingEncoding:NSUTF8StringEncoding]];
     }
     
     NSURLSession* session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     
     // 태스크 생성
     NSURLSessionTask *currentTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        [self.delegate receiveResponseData: data];
+        [self.delegate receiveResponseDataToDictionary: [JSONUtil JSONDataToDictionary:data]];
     }];
     // 태스크를 시작
     [currentTask resume];

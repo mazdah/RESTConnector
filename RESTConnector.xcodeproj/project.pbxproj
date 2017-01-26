@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75972701E39BE8F0033E8D5 /* JSONUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E759726F1E39BE8F0033E8D5 /* JSONUtil.m */; };
 		E7E764401E370F5A0082D156 /* RESTConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E7643F1E370F5A0082D156 /* RESTConnector.m */; };
 		E7E764411E370F5A0082D156 /* RESTConnector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E7643E1E370F5A0082D156 /* RESTConnector.h */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E7E7648E1E3755370082D156 /* AuthInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7E764471E3719AD0082D156 /* AuthInfo.h */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		E75972641E39B2860033E8D5 /* Till60PreTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Till60PreTest.xcodeproj; path = ../Till60PreTest/Till60PreTest.xcodeproj; sourceTree = "<group>"; };
+		E759726E1E39BE8F0033E8D5 /* JSONUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtil.h; sourceTree = "<group>"; };
+		E759726F1E39BE8F0033E8D5 /* JSONUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtil.m; sourceTree = "<group>"; };
 		E7E7643B1E370F5A0082D156 /* libRESTConnector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESTConnector.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E7643E1E370F5A0082D156 /* RESTConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESTConnector.h; sourceTree = "<group>"; };
 		E7E7643F1E370F5A0082D156 /* RESTConnector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTConnector.m; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				E7E7643E1E370F5A0082D156 /* RESTConnector.h */,
 				E7E7643F1E370F5A0082D156 /* RESTConnector.m */,
 				E7E764471E3719AD0082D156 /* AuthInfo.h */,
+				E759726E1E39BE8F0033E8D5 /* JSONUtil.h */,
+				E759726F1E39BE8F0033E8D5 /* JSONUtil.m */,
 			);
 			path = RESTConnector;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E764401E370F5A0082D156 /* RESTConnector.m in Sources */,
+				E75972701E39BE8F0033E8D5 /* JSONUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

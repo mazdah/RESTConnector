@@ -7,6 +7,7 @@
 //
 
 #import "RESTConnector.h"
+#import "JSONUtil.h"
 
 @implementation RESTConnector
 

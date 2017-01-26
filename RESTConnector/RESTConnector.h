@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthInfo.h"
-#import "JSONUtil.h"
 
 @protocol  RESTConnectorDelegate;
 

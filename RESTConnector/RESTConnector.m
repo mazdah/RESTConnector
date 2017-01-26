@@ -10,6 +10,7 @@
 
 @implementation RESTConnector
 
+@synthesize delegate;
 @synthesize receivedData;
 
 - (id) init {
@@ -22,20 +23,30 @@
     self.baseUrl = baseUrlParam;
 }
 
-- (void) callApiWithURLStrResultData:(NSString *)URLString {
+- (void) callApiWithURLStr:(NSString *)URLString method:(NSString *)method param:(NSString *)param {
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     NSString *fullURLStr = [NSString stringWithFormat:@"%@%@", TILL60_BASE_URL, URLString];
     NSURL* url = [NSURL URLWithString:fullURLStr];
     
+    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+    [urlRequest setHTTPMethod:method];
+    
+    if ([@"POST" isEqualToString:method]) {
+        [urlRequest setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
     NSURLSession* session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     
     // 태스크 생성
-    NSURLSessionTask *currentTask = [session dataTaskWithURL:url];
+    NSURLSessionTask *currentTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [self.delegate receiveResponseData: data];
+    }];
     // 태스크를 시작
     [currentTask resume];
 }
 
+/*
 - (void)URLSession:(NSURLSession*)session dataTask:(NSURLSessionDataTask*)dataTask didReceiveResponse:(NSURLResponse*)response completionHandler:(void(^)(NSURLSessionResponseDisposition))completionHandler {
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     // 상태 코드를 구한다
@@ -65,5 +76,5 @@
         // 에러 시의 메시지
     }
 }
-
+*/
 @end

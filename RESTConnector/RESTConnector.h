@@ -9,10 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "AuthInfo.h"
 
+@protocol  RESTConnectorDelegate;
+
 @interface RESTConnector : NSObject <NSURLSessionDataDelegate>
 
-@property (nonatomic, strong)   NSMutableData  *receivedData;
+@property (nonatomic, assign)   id<RESTConnectorDelegate> delegate;
+@property (nonatomic, strong)   NSMutableData   *receivedData;
 
 - (id) init;
-- (void) callApiWithURLStrResultData:(NSString *)URLString;
+- (void) callApiWithURLStr:(NSString *)URLString method:(NSString *)method param:(NSString *)param;
+@end
+
+@protocol  RESTConnectorDelegate<NSObject>;
+
+@required
+
+- (void) receiveResponseData: (NSData *) data;
+
 @end

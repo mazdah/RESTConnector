@@ -32,7 +32,7 @@
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:method];
     
-    if ([@"POST" isEqualToString:method]) {
+    if ([@"POST" isEqualToString:method] || [@"PUT" isEqualToString:method] || [@"PATCH" isEqualToString:method]) {
         [urlRequest setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding]];
     }
     

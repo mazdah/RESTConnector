@@ -63,17 +63,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E759726A1E39B3A20033E8D5 /* Example */ = {
+		E759726B1E39B7EF0033E8D5 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Example;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		E7E764321E370F590082D156 = {
 			isa = PBXGroup;
 			children = (
-				E759726A1E39B3A20033E8D5 /* Example */,
+				E759726B1E39B7EF0033E8D5 /* Example */,
 				E75972641E39B2860033E8D5 /* Till60PreTest.xcodeproj */,
 				E7E7643D1E370F5A0082D156 /* RESTConnector */,
 				E7E7643C1E370F5A0082D156 /* Products */,

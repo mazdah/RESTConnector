@@ -11,6 +11,10 @@
 @implementation JSONUtil
 
 + (NSString *) DictionaryToJSONString:(id)jsonObj {
+    if (jsonObj == nil) {
+        return nil;
+    }
+    
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObj
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
@@ -25,6 +29,10 @@
 }
 
 + (NSDictionary *) JSONDataToDictionary:(NSData *) jsonData {
+    if (jsonData == nil) {
+        return nil;
+    }
+    
     NSError *error = nil;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     
